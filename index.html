@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roseville - Поместье вуду</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img class="brand-logo" src="images/logo.png" alt="Логотип Roseville" />
+        <div>
+          <div class="brand-title">Roseville</div>
+          <div class="ritual-label">estate broadcast</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html" data-page="home">Главная</a>
+        <a href="story.html" data-page="story">История</a>
+        <a href="shop.html" data-page="shop">Магазинчик</a>
+        <a href="catalog.html" data-page="catalog">Каталог вуду</a>
+        <a href="gallery.html" data-page="gallery">Галлерея</a>
+        
+        <a href="podcast.html" data-page="podcast">Подкаст</a>
+        <a href="flashes.html" data-page="flashes">Сундучок Аластора</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-card reveal">
+        <div class="ritual-label">Свиток привратника</div>
+        <h1 class="hero-title">Добро пожаловать в <span>Roseville</span></h1>
+        <p>Перемещайте плитки, чтобы выстроить правильный порядок. Нажмите «Попытать удачу» — если руна собрана, откроется сообщение и появится талон с вашим личным временем для аудиенции, не опаздывайте. Иногда духи могут отказать — тогда удачу придется попытать снова.</p>
+        <div class="cta-row">
+          <a class="button" href="flashes.html">Открыть сундучок</a>
+          <a class="button ghost" href="catalog.html">Каталог вуду</a>
+        </div>
+      </div>
+      <div class="hero-art reveal">
+        <div class="puzzle-shell">
+          <div class="puzzle-grid" id="rune-puzzle" aria-label="Пятнашка руны"></div>
+          <div class="puzzle-actions">
+            <button class="puzzle-mix" id="rune-mix" type="button">Перемешать</button>
+            <button class="puzzle-check" id="rune-check" type="button">Попытать удачу</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title reveal">Навигация по поместью</h2>
+      <div class="grid nav-grid">
+        <a class="card card-link reveal" href="story.html">
+          <h3>История</h3>
+          <p>Дневник хранителя и хроники Roseville. Здесь раскрывается сюжет и тайные мотивы поместья.</p>
+          <span class="tag">сюжет</span>
+        </a>
+        <a class="card card-link reveal" href="shop.html">
+          <h3>Магазинчик</h3>
+          <p>Талисманы, свечи и редкие предметы. Потратьте ваши денюшки с умом.</p>
+          <span class="tag">северниры</span>
+        </a>
+        <a class="card card-link reveal" href="catalog.html">
+          <h3>Каталог вуду</h3>
+          <p>Если вас инетересует что-то круче сувениров, добро пожаловать в ритуальный магазин.</p>
+          <span class="tag">ритуалы</span>
+        </a>
+        <a class="card card-link reveal" href="gallery.html">
+          <h3>Галлерея</h3>
+          <p>Здесь собраны самые яркие моменты из нашей долгой истории.</p>
+          <span class="tag">виртуальный тур</span>
+        </a>
+        <a class="card card-link reveal" href="podcast.html">
+          <h3>Подкаст</h3>
+          <p>Ночные эфиры.</p>
+          <span class="tag">эфир</span>
+        </a>
+        <a class="card card-link reveal" href="flashes.html">
+          <h3>Сундучок Аластора</h3>
+          <p>Мини-игры и интерактивы. Короткие ритуалы и испытания.</p>
+          <span class="tag">игры</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="panel reveal">
+        <h3>Ближайшие анонсы</h3>
+        <ul>
+          <li><strong>Открываем Гробницы</strong><span>конец февраля 2026</span></li>
+          <li><strong>Мини-игра "Broadcast from the Mire"</strong><span>март 2026</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title reveal">Контакты</h2>
+      <div class="contact-grid">
+        <div class="panel reveal">
+          <h3>Где нас найти</h3>
+          <p>Поместье Roseville скрыто у границы старого города. Приходите на закате, когда алые огни загораются сами.</p>
+          <p>Почта: roseville@voxensation</p>
+        </div>
+        <div class="map-frame reveal map-collapsed">
+          <button class="map-toggle" type="button">Открыть карту</button>
+          <img src="images/kartakartapapap.png" alt="Карта поместья Roseville" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-compact">Property of @voxensation 2026</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

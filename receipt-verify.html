@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roseville - Подтверждение оплаты</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="section container">
+    <div class="panel reveal">
+      <h3>Оплата подтверждена</h3>
+      <p>Предъявите Господину Дювалю во время следующего визита.</p>
+      <p>Спасибо за оплату :)</p>
+      <p class="receipt-bank">Оплата подтверждена: <span id="bank">Voxsa</span></p>
+      <p class="receipt-proof">Код подтверждения: <span id="proof">receipt-verify.html#voxsa</span></p>
+    </div>
+  </main>
+  <script>
+    const hash = window.location.hash.replace('#', '') || 'voxsa';
+    const bank = hash === 'veestarcard' ? 'VeestarCard' : 'Voxsa';
+    const bankEl = document.getElementById('bank');
+    const proofEl = document.getElementById('proof');
+    if (bankEl) bankEl.textContent = bank;
+    if (proofEl) proofEl.textContent = `receipt-verify.html#${hash}`;
+  </script>
+</body>
+</html>

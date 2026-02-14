@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roseville - Магазинчик</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="shop">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img class="brand-logo" src="images/logo.png" alt="Логотип Roseville" />
+        <div>
+          <div class="brand-title">Roseville</div>
+          <div class="ritual-label">estate cellar</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html" data-page="home">Главная</a>
+        <a href="story.html" data-page="story">История</a>
+        <a href="shop.html" data-page="shop">Магазинчик</a>
+        <a href="catalog.html" data-page="catalog">Каталог вуду</a>
+        <a href="gallery.html" data-page="gallery">Галлерея</a>
+        
+        <a href="podcast.html" data-page="podcast">Подкаст</a>
+        <a href="flashes.html" data-page="flashes">Сундучок Аластора</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero container">
+      <div class="hero-card reveal">
+        <div class="ritual-label">Склад поместья</div>
+        <h1 class="hero-title">Магазинчик</h1>
+        <p>Туристическая лавка Roseville: витрина редких предметов, талисманов и подарков. Добавляйте в корзину и печатайте чек. Скоро у нас появится скидочная карта.</p>
+      </div>
+    </section>
+
+    <section class="section container marketplace" data-marketplace="shop" data-currency="USD">
+      <div class="marketplace-grid">
+        <div>
+          <h2 class="section-title reveal">Товары</h2>
+          <div class="product-grid">
+            <article class="product-card reveal" data-name="Свеча уёбища болотного" data-price="32">
+              <h3>Свеча уёбища болотного</h3>
+              <p>Подсвечивает скрытые тропы.</p>
+              <div class="product-footer">
+                <span class="product-price">$32</span>
+                <button class="button small product-add" type="button">В корзину</button>
+              </div>
+            </article>
+            <article class="product-card reveal" data-name="Колокольчик для жопы" data-price="54">
+              <h3>Колокольчик для жопы</h3>
+              <p>Зов для проводников поместья и редких диалогов.</p>
+              <div class="product-footer">
+                <span class="product-price">$54</span>
+                <button class="button small product-add" type="button">В корзину</button>
+              </div>
+            </article>
+            <article class="product-card reveal" data-name="Фляга с мочой" data-price="41">
+              <h3>Фляга с мочой</h3>
+              <p>Замедляет жизненный ритм и подсвечивает геморроидальные узлы.</p>
+              <div class="product-footer">
+                <span class="product-price">$41</span>
+                <button class="button small product-add" type="button">В корзину</button>
+              </div>
+            </article>
+            <article class="product-card reveal" data-name="Волосок с залупы Винсента" data-price="26">
+              <h3>Волосок с залупы Винсента</h3>
+              <p>Материал для обрядов и оберегов.</p>
+              <div class="product-footer">
+                <span class="product-price">$26</span>
+                <button class="button small product-add" type="button">В корзину</button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <aside class="cart-panel cart-panel--primary reveal">
+          <h3>Корзина</h3>
+          <p class="cart-note">Соберте покупку и распечатайте чек для аудиенции.</p>
+          <div class="cart-items"></div>
+          <div class="cart-empty">Корзина пуста. Добавьте предметы из лавки.</div>
+          <div class="cart-summary">
+            <span>Итого</span>
+            <strong class="cart-total">$0</strong>
+          </div>
+          <button class="button cart-print" type="button">Печатать чек</button>
+        </aside>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-compact">Property of @voxensation 2026</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
