@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#6f253c">
+  <meta name="description" data-i18n-content="pageDescription" content="Маленький радиодемон, которому нужна твоя забота. Тамагочи Аластор — уютная браузерная игра.">
+  <title>Тамагочи Аластор · На твоей волне</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E📻%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="./assets/fonts/Gothra.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="game" id="game" aria-label="Тамагочи Аластор" data-i18n-aria-label="gameLabel">
+    <div id="game-content" class="game-content">
+      <header class="game-header">
+        <button class="back-button" id="back-button" type="button" aria-label="Вернуться в комнату" data-i18n-aria-label="backLabel" disabled>← <span data-i18n="backText">В комнату</span></button>
+        <div class="location-title"><span class="little-star">✦</span><h1 id="location-title">Комната Аластора</h1></div>
+        <div class="language-switch" role="group" data-i18n-aria-label="languageLabel"></div>
+      </header>
+      <nav class="location-nav" aria-label="Локации" data-i18n-aria-label="locationsLabel"><div class="theme-switch"></div><div id="destinations"></div></nav>
+      <section class="scene" id="scene" aria-label="Игровая сцена" data-i18n-aria-label="sceneLabel">
+        <div id="background" class="scene-background" aria-hidden="true"></div>
+        <div class="room-decor" aria-hidden="true"><div class="wall-line"></div><div class="window"><i></i><i></i><i></i><i></i></div><div class="wall-art">ON<br>AIR<span>✦</span></div><div class="cabinet"><div class="radio">▥<span>◉ ◉</span></div></div><div class="rug"></div><div class="floor-lines"></div></div>
+        <div class="scene-heading"><span id="scene-eyebrow"></span><p id="scene-description"></p></div>
+        <div class="mood-badge" id="mood-badge"><span id="mood-dot">●</span><span id="mood-label"></span></div>
+        <div class="speech" id="speech" aria-live="polite"></div>
+        <div class="character" id="alastor" data-draggable="character" role="button" tabindex="0" data-i18n-aria-label="characterLabel" data-i18n-title="characterTitle" aria-label="Аластор: перетащи мышкой, пальцем или перемести стрелками" title="Двигай бережно — он доволен. От тряски может разозлиться."><div class="character-motion"><div id="character-sprite"></div></div><span class="character-name"><b data-i18n="characterName">АЛАСТОР</b> <span>✦</span></span></div>
+        <div id="scene-objects"></div>
+        <div id="character-effects" aria-hidden="true"></div>
+        <div class="bath-progress" id="bath-progress" hidden><span id="bath-label"></span><div role="progressbar" id="bath-meter" aria-label="Мытьё" data-i18n-aria-label="washingLabel" aria-valuemin="0" aria-valuemax="100"><i id="bath-fill"></i></div></div>
+        <span class="scene-coordinate" aria-hidden="true">RADIO DEMON · 01</span>
+      </section>
+      <section class="care-panel" aria-label="Уход за Аластором" data-i18n-aria-label="careLabel">
+        <div class="stats">
+          <div class="stat"><div class="stat-heading"><label for="health">❤️ <span data-i18n="health">Здоровье</span></label><span><strong id="health-value">100</strong><small> / 100</small></span></div><progress id="health" max="100" value="100" aria-label="Здоровье" data-i18n-aria-label="health"></progress></div>
+          <div class="stat hunger"><div class="stat-heading"><label for="hunger">🍖 <span data-i18n="hunger">Голод</span></label><span><strong id="hunger-value">50</strong><small> / 100</small></span></div><progress id="hunger" max="100" value="50" aria-label="Голод" data-i18n-aria-label="hunger"></progress></div>
+        </div>
+        <div class="care-heading"><span data-i18n="careHeading">НЕМНОГО ЗАБОТЫ</span><span class="hunger-help" data-i18n="hungerHelp">Меньше голода — лучше</span></div>
+        <div class="action-buttons" id="action-buttons"></div>
+        <p class="scene-hint" id="scene-hint"></p>
+      </section>
+      <footer class="game-footer"><span class="credits">made by @mr.j.cry with love <span aria-hidden="true">·</span> powered by Codex</span><span class="save-status" id="save-status" role="status"></span></footer>
+    </div>
+    <dialog class="modal" id="vox-dialog" aria-labelledby="vox-title"><div class="modal-settings"><div class="theme-switch"></div><div class="language-switch" role="group" data-i18n-aria-label="languageLabel"></div></div><div class="modal-sprite" id="vox-sprite"></div><span class="modal-eyebrow" data-i18n="callEyebrow">ВХОДЯЩИЙ ВЫЗОВ</span><h2 id="vox-title" data-i18n="callTitle">📞 Вокс: АЛАСТОР. ГДЕ. МОЙ. ПУЛЬТ. 😡</h2><p data-i18n="callDescription">Кажется, твою маленькую шалость заметили.</p><button class="modal-button" id="close-call" type="button" data-i18n="returnRemote">Ладно, возвращаю пульт</button><small data-i18n="callReward">+10 здоровья · −10 голода</small></dialog>
+    <dialog class="modal death-modal" id="death-dialog" aria-labelledby="death-title"><div class="modal-settings"><div class="theme-switch"></div><div class="language-switch" role="group" data-i18n-aria-label="languageLabel"></div></div><span class="death-icon">💀</span><span class="modal-eyebrow" data-i18n="deathEyebrow">КОНЕЦ ЭФИРА</span><h2 id="death-title" data-i18n="deathTitle">Аластор протух 💀</h2><p data-i18n="deathDescription">Даже демонам иногда нужна забота.<br>Попробуем ещё раз?</p><button class="modal-button" id="restart" type="button" data-i18n="restart">Начать заново</button></dialog>
+    <dialog class="modal" id="restart-dialog" aria-labelledby="restart-title"><div class="modal-settings"><div class="theme-switch"></div><div class="language-switch" role="group" data-i18n-aria-label="languageLabel"></div></div><span class="death-icon">📻</span><h2 id="restart-title" data-i18n="restartTitle">Начать новый эфир?</h2><p data-i18n="restartDescription">Текущий прогресс будет сброшен.</p><button class="modal-button" id="confirm-restart" type="button" data-i18n="confirmRestart">Да, начать заново</button><button class="cancel-button" id="cancel-restart" type="button" data-i18n="cancel">Отмена</button></dialog>
+    <div class="startup-error" id="startup-error" role="alert" hidden>
+      <a class="modal-button" href="http://localhost:4183/" data-i18n="openGame">Открыть игру / Open game</a>
+    </div>
+  </main>
+  <noscript>Для игры нужно включить JavaScript. Enable JavaScript to play.</noscript>
+  <script src="./bootstrap.js" defer></script>
+</body>
+</html>
